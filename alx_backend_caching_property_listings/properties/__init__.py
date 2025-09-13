@@ -1,0 +1,1 @@
+default_app_config = 'alx_backend_caching_property_listings.properties.apps.PropertiesConfig'
