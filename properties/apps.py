@@ -6,4 +6,4 @@ class PropertiesConfig(AppConfig):
     name = 'alx_backend_caching_property_listings.properties'
 
     def ready(self):
-        from . import signals
+        import properties.signals
