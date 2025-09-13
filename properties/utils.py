@@ -18,11 +18,12 @@ def get_redis_cache_metrics():
     hits = info.get('keyspace_hits', 0)
     misses = info.get('keyspace_misses', 0)
     total = hits + misses
-    hit_ratio = (hits / total) if total > 0 else None
+    hit_ratio = (hits / total) if total > 0 else 0
     metrics = {
         'keyspace_hits': hits,
         'keyspace_misses': misses,
         'hit_ratio': hit_ratio
     }
-    logging.info(f"Redis Cache Metrics: {metrics}")
+    logger = logging.getLogger(__name__)
+    logger.error(f"Redis Cache Metrics: {metrics}")
     return metrics
